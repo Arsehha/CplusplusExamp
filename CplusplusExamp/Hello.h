@@ -1,7 +1,10 @@
 #pragma once
+
 #ifndef HELLO_H
 #define HELLO_H
 
-void sayHello();
+#include <cstdint>
+
+void fizzbuzz(uint8_t n);
 
 #endif // !Hello.h
