@@ -5,8 +5,7 @@
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	uint8_t n;
-	std::cout << "Введите n: ";
-	std::cin >> n;
-	fizzbuzz(n);
+	int64_t num;
+	num = compute_fib();
+	std::cout <<std::endl <<"Число фибаначи " << num;
 }

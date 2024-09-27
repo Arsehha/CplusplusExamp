@@ -5,6 +5,6 @@
 
 #include <cstdint>
 
-void fizzbuzz(uint8_t n);
+int64_t compute_fib();
 
 #endif // !Hello.h

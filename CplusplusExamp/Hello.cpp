@@ -1,26 +1,38 @@
 #include "Hello.h"
 #include <iostream>
 #include <cstdint>
+#include <fstream>
 
-void fizzbuzz(uint8_t n )
+int64_t compute_fib()
 {
-	for (uint8_t i = 1; i <= n; i++)
+	std::fstream file;
+	file.open("a.txt");
+
+	int n;
+	if (!file)
 	{
-		if ((i % 3 == 0) && !(i % 5 == 0))
+		std::cout << "Файл не открыт";
+	}
+	else
+	{
+		std::cout << "Файл открыт";
+		file >> n;
+	}
+	file.close();
+
+	int64_t numOne = 0, numTwo = 1, result;
+
+	for (int i = 0; i < n; i++)
+	{
+		result = numOne + numTwo;
+		if (numOne > numTwo)
 		{
-			std::cout << "Fizz" << std::endl;
-		}
-		if (!(i % 3 == 0) && (i % 5 == 0))
-		{
-			std::cout << "Buzz" << std::endl;
-		}
-		if ((i % 3 == 0) && (i % 5 == 0))
-		{
-			std::cout << "Fizzbuzz" << std::endl;
+			numTwo = result;
 		}
 		else
 		{
-			std::cout << i << std::endl;
+			numOne = result;
 		}
 	}
+	return result;
 }
